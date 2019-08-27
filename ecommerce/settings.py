@@ -45,7 +45,10 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     # -----------------------------ADDED-----------------------------
     'django_forms_bootstrap',
+    # These should be installed so makemigrations and migrate know which
+    # apps to look for models in
     'accounts',
+    'products',
 ]
 
 MIDDLEWARE = [
