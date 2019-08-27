@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+    <div class="row row-flex">
+        <!-- for loop for the products -->
+        {% for product in products %}
+            <div class="col-xs-10 col-xs-offset-1 col-sm-offset-0 col-sm-6 col-md-4 display panel panel-default">
+                <div class="panel-body">
+                    <!-- Product image - make it fit the div that it is in so it doesn't stretch -->
+                    <div class="product" style="background-image: url('{{ MEDIA_URL }}{{ product.image }}')">
+                    </div>
+                    <!-- Product name -->
+                    <h3>{{ product.name }}</h3>
+                    <!-- Product description -->
+                    <p class="product-description">{{ product.description }}</p>
+                    <!-- Product price -->
+                    <p>{{ product.price }}</p>
+                    <!-- Ability to add to basket - point to add_to_cart url -->
+                    <form method="POST" action="{% url 'add_to_cart' product.id %}">
+                        {% csrf_token %}
+                        <!-- Ability to enter a quantity before submitting the form -->
+                        <div class="input-group">
+                            <input name="quantity" type="number" min="1" max="999" class="form-control" placeholder="Quantity">
+                            <span class="input-group-btn">
+                                <button class="btn btn-success" type="submit">Add</button>
+                            </span>
+                        </div>
+                    </form>
+                    
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+
+{% endblock %}
