@@ -36,20 +36,20 @@
                 </div>
             </div>
         {% endfor %}
-        
-        <!-- Total cost - value of the cart -->
-        <div class="row">
-            <p>Total</p>
-            <p>
-                <span class="glyphicon glyphicon-gbp" aria-hidden="true">{{ total }}</span>
-            </p>
-            <!-- Button to purchase the items in the cart -->
-            <a href="/" class="btn btn-success" role="button">
-                <span class="glyphicon glyphicon-ok-sign" aria-hidden"true"></span>
-                Checkout
-            </a>
-        </div>
-    
     </div>
+
+    <!-- Total cost - value of the cart -->
+    <div class="row">
+        <p>Total</p>
+        <p>
+            <span class="glyphicon glyphicon-gbp" aria-hidden="true">{{ total }}</span>
+        </p>
+        <!-- Button to purchase the items in the cart -->
+        <a href="/" class="btn btn-success" role="button">
+            <span class="glyphicon glyphicon-ok-sign" aria-hidden"true"></span>
+            Checkout
+        </a>
+    </div>
+    
     
 {% endblock %}
