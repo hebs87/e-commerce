@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/1.11/ref/settings/
 """
 
 import os
+import env
 
 # -----------------------------ADDED-----------------------------
 if os.path.exists('env.py'):
@@ -151,6 +152,10 @@ STATICFILES_DIRS = (
 # -----------------------------ADDED-----------------------------
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 MEDIA_URL = '/media/'
+
+# -----------------------------ADDED-----------------------------
+STRIPE_PUBLISHABLE = os.environ.get('STRIPE_PUBLISHABLE')
+STRIPE_SECRET = os.environ.get('STRIPE_SECRET')
 
 # -----------------------------ADDED-----------------------------
 MESSAGE_STORAGE = 'django.contrib.messages.storage.session.SessionStorage'
