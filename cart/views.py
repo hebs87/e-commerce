@@ -21,7 +21,12 @@ def add_to_cart(request, id):
     # Gets cart from the session if there is one, or empty dict if not
     cart = request.session.get('cart', {})
     # Add ID and quantity to cart
-    cart[id] = cart.get(id, quantity)
+    if id in cart:
+        # If item is already in cart, we add the new quantiy to existing
+        cart[id] = int(cart[id]) + quantity
+    else:
+        # If item not in cart, existing value is overwritten
+        cart[id] = cart.get(id, quantity)
 
     request.session['cart'] = cart
     return redirect(reverse('index'))
