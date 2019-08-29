@@ -49,7 +49,7 @@ INSTALLED_APPS = [
     # apps to look for models in
     'accounts',
     'products',
-    'cart',
+    'cart'
 ]
 
 MIDDLEWARE = [
@@ -80,7 +80,6 @@ TEMPLATES = [
                 # ---------------------------ADDED---------------------------
                 # This is because we have media in our pathways
                 'django.template.context_processors.media',
-                'cart.contexts.cart_contents',
             ],
         },
     },
