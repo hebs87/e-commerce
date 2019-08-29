@@ -1,6 +1,7 @@
 *.sqlite3
 *.pyc
 .c9
-.~c9*
+.~c9
+.~c9_invoke_iMTlUT.py
 __pycache__
 env.py
