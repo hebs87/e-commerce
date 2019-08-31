@@ -8,6 +8,7 @@ https://docs.djangoproject.com/en/1.11/ref/settings/
 """
 
 import os
+import env
 import dj_database_url
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
@@ -25,7 +26,7 @@ SECRET_KEY = os.environ.get('SECRET_KEY')
 DEBUG = True
 
 # -----------------------------EDITED-----------------------------
-ALLOWED_HOSTS = [os.environ.get('C9_HOSTNAME'), "ecommerce-hebs87.herokuapp.com"]
+ALLOWED_HOSTS = [os.environ.get('C9_HOSTNAME'), os.environ.get('HOSTNAME')]
 
 
 # Application definition
@@ -173,7 +174,7 @@ DEFAULT_FILE_STORAGE = 'custom_storages.MediaStorage'
 
 # -----------------------------ADDED-----------------------------
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
-MEDIA_URL = '/media/'
+MEDIA_URL = "https://%s/%s/" % (AWS_S3_CUSTOM_DOMAIN, MEDIAFILES_LOCATION)
 
 # -----------------------------ADDED-----------------------------
 STRIPE_PUBLISHABLE = os.environ.get('STRIPE_PUBLISHABLE')
