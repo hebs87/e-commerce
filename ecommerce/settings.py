@@ -25,7 +25,8 @@ SECRET_KEY = os.environ.get('SECRET_KEY')
 DEBUG = True
 
 # -----------------------------EDITED-----------------------------
-ALLOWED_HOSTS = [os.environ.get('C9_HOSTNAME')]
+ALLOWED_HOSTS = [os.environ.get('C9_HOSTNAME'),
+                 os.environ.get('HOSTNAME'),]
 
 
 # Application definition
