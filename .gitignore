@@ -5,5 +5,5 @@
 .~c9_invoke_iMTlUT.py
 __pycache__
 env.py
-static/
+# static/
 media/
